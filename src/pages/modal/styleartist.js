@@ -65,13 +65,16 @@ export const ModalView = styled.div.attrs((props) => ({
   width: 480px;
   height: 250px;
   background-color: #7063EC;
+  >img{
+      margin-top: 25px;
+    }
     >div.desc {
-      margin: 70px;
+      margin: 40px;
       font-size: 20px;
       color: #ffffff;
       font-weight: 700;
     }
-    >:nth-child(3){
+    >:nth-child(4){
       width: 220px;
       height: 50px;
       border-radius: 10px;

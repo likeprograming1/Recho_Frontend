@@ -3,16 +3,18 @@ import { useState } from "react"
 import { Link } from "react-router-dom";
 import { ModalBackdrop, ModalView, ExitBtn} from "../modal/styleartist.js";
 import { ModalBackdrops, ModalViews, ExitBtns} from "../modal/normalmodal.js"
-
-
+import Reco from "../../Image/Header/RECHO.svg"
+import Recos from "../../Image/Header/RECHO2.png"
 const SignUp = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [isOpens, setIsOpens] = useState(false);
+
 //모달 -------------------------------------
 // 조건부 렌더링을 활용해서 Modal이 열린 상태(isOpen이 true인 상태)일 때만 모달창과 배경이 뜰 수 있게 구현
 // * 조건부 렌더링을 활용해서 Modal이 열린 상태(isOpen이 true인 상태)일 때는 ModalBtn의 내부 텍스트가 
 // 'Opened!' 로 Modal이 닫힌 상태(isOpen이 false인 상태)일 때는 ModalBtn 의 내부 텍스트가 'Open Modal'이 되도록 구현 */
+
   const openArtistModalHandler = () => {
     setIsOpen(!isOpen) 
     // isOpen의 상태를 변경하는 메소드를 구현
@@ -22,9 +24,11 @@ const SignUp = () => {
   const openNormalModalHandler = () => {
     setIsOpens(!isOpens)
   }
+
 // ----------------------------------------
 
 //유효성 검사 -------------------------------
+
   // const [name, setName] = useState("")
   // const [email, setEmail] = useState("")
   // const [password, setPassword] =useState("")
@@ -47,7 +51,9 @@ const SignUp = () => {
   //       setNameCheck("올바른 이메일 형식입니다.")
   //     }
   //   })
+
   // --------------------------------------------------
+
      const [nameInputClick, setNameInputClick] = useState(false);
      const [emailInputClick, setEmailInputClick] = useState(false);
      const [passwordInputClick, setPasswordInputClick] = useState(false);
@@ -106,13 +112,19 @@ const SignUp = () => {
       <h5>특수문자 제외 10자이하</h5>
       </section>
       <section className="check">
-      <div className="sercheck">
-      <input className="servicecheck" type="checkbox" name="service"></input>
-      <label for="service"> 서비스 이용약관 </label>
-      </div>
+        <div className="sercheck">
+          <input input className="servicecheck" type="checkbox" name="service">
+          </input>
+          <label for="service">
+            서비스 이용약관 
+          </label>
+        </div>
       <div className="corcheck">
-      <input className="checkinput" type="checkbox" ></input>
-      <label for="correct"> 개인정보 수집 및 이용동의 </label >
+        <input className="checkinput" type="checkbox" >
+        </input>
+        <label for="correct"> 
+          개인정보 수집 및 이용동의 
+        </label >
       </div>
       </section>
       <section className="signbutton">
@@ -123,6 +135,7 @@ const SignUp = () => {
         <ModalBackdrop onClick={openArtistModalHandler}>
             <ModalView onClick={(e) => e.stopPropagation()}>
               <ExitBtn onClick={openArtistModalHandler}>x</ExitBtn>
+              <img src={Reco} alt='Logo-img'/>
               <div className='desc'>정말 아티스트 회원으로 가입하시겠습니까?</div>
               <button>아티스트 가입하기</button>
             </ModalView>
@@ -134,6 +147,7 @@ const SignUp = () => {
         <ModalBackdrops onClick={openNormalModalHandler}>
             <ModalViews onClick={(e) => e.stopPropagation()}>
               <ExitBtns onClick={openNormalModalHandler}>x</ExitBtns>
+              <img src={Recos} alt='Logo-img'/>
               <div className='desc'>정말 일반회원으로 가입하시겠습니까?</div>
               <button>일반 회원 가입하기</button>
             </ModalViews>
