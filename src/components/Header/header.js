@@ -30,8 +30,8 @@ const Header = () => {
          )}
           <Link to="#" className="navBtn">고객센터</Link>
           <Link to="#" className="navBtn">관신상품</Link>
-          <Link to="#" className="navBtn">로그인</Link>
-          <Link to="#" className="sign-navBtn">회원가입</Link>
+          <Link to="/login" className="navBtn">로그인</Link>
+          <Link to="/signup" className="sign-navBtn">회원가입</Link>
           <img src={sidebar} alt="search-butoon"  className="navSidebar"></img>
         </div>
       </nav> 
