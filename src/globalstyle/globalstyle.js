@@ -19,14 +19,18 @@ const variables = createGlobalStyle`
     --White : #F8F8F8;
     --Gray : #464646;
     --Nosel : #a0a0a0;
+    --logSignTitleFont : #455368;
+    --SignUpCheck : #AFB9CA;
+    --SignUpButton : #DDE5FD;
     
     // font-size
+    --font9 : 9px;
     --font12 : 12px;
     --font14 : 14px;
     --font16 : 16px;
     --font18 : 18px;
     --font20 : 20px;
-
+    --font18 : 18px;
   }
 `;
 
