@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
 
 const SlideBox = styled.section`
-  width: 1403px;
+  max-width: 1403px;
+  width: 100%;
   height: 540px;
   margin-top: 48px;
   .carousel {
@@ -12,6 +13,7 @@ const SlideBox = styled.section`
       bottom: 50px;
     }
     .Imgslider {
+      background-color: var(--White);
       width: 100%;
       height: 540px;
     }

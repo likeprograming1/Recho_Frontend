@@ -7,6 +7,9 @@ import clock from "../../Image/accessory/clock.jpeg";
 import danchu from "../../Image/accessory/danchu.jpeg";
 import haribo from "../../Image/accessory/haribo.jpg";
 import lucky from "../../Image/clothing/lucky.png";
+import guga3 from "../../Image/furniture/gagu3.jpeg";
+import shoes from "../../Image/sundries/customshoes.jpeg";
+import keyboard from "../../Image/electronic/keyboard.jpeg";
 import good from "../../Image/etc/good.svg";
 
 import { useState } from "react";
@@ -98,15 +101,255 @@ const Main = () => {
       like : 7,
     }],
   },{
-    data : [],
+    data : [{
+      image : guga3,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 0,
+    },{
+      image : guga3,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 1,
+    },{
+      image : guga3,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 2,
+    },{
+      image : guga3,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 3,
+    },{
+      image : guga3,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 4,
+    },{
+      image : guga3,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 5,
+    },{
+      image : guga3,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 6,
+    },{
+      image : guga3,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 7,
+    }],
   },{
-    data : [],
+    data : [{
+      image : shoes,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 0,
+    },{
+      image : shoes,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 1,
+    },{
+      image : shoes,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 2,
+    },{
+      image : shoes,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 3,
+    },{
+      image : shoes,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 4,
+    },{
+      image : shoes,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 5,
+    },{
+      image : shoes,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 6,
+    },{
+      image : shoes,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 7,
+    }],
   },{
-    data : [],
+    data : [{
+      image : caps,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 0,
+    },{
+      image : caps,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 1,
+    },{
+      image : caps,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 2,
+    },{
+      image : caps,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 3,
+    },{
+      image : caps,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 4,
+    },{
+      image : caps,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 5,
+    },{
+      image : caps,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 6,
+    },{
+      image : caps,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 7,
+    }],
   },{
-    data : [],
+    data : [{
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 0,
+    },{
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 1,
+    },{
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 2,
+    },{
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 3,
+    },{
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 4,
+    },{
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 5,
+    },{
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 6,
+    },{
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 7,
+    }],
   },{
-    data : [],
+    data : [{
+      image : lucky,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 0,
+    },{
+      image : airpot,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 1,
+    },{
+      image : caps,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 2,
+    },{
+      image : clock,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 3,
+    },{
+      image : danchu,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 4,
+    },{
+      image : guga3,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 5,
+    },{
+      image : shoes,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 6,
+    },{
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 7,
+    }],
   }]
   return (<MainBox>
     <Slide />

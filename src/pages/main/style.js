@@ -10,15 +10,32 @@ const MainBox = styled.main`
   .realTime{
     margin-top: 47px;
     width: 100%;
+    @media screen and (max-width: 760px){
+      margin-left: 20px;
+    }
     h2{
       margin-bottom: 10px;
     }
     .BestBox {
-      width: 100%;
+      width: 200px;
       display: flex;
+      @media screen and (max-width: 1400px){
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 40px;
+      }
+      @media screen and (max-width: 1260px){
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @media screen and (max-width: 1010px){
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media screen and (max-width: 760px){
+        grid-template-columns: repeat(2, 1fr);
+      }
       .Best{
-        width: 100%;
-        height: 100%;
+        width: 200px;
         display: flex;
         flex-direction: column;
         margin-right: 41px;
@@ -52,10 +69,16 @@ const MainBox = styled.main`
   .tags{
     width: 100%;
     margin-top: 120px;
+    @media screen and (max-width:720px){
+      margin-left : 40px;
+    }
     .tag{
       border: none;
       background: none;
       margin-right: 40px;
+      @media screen and (max-width:720px){
+        margin-right : 20px;
+      }
       cursor: pointer;
       .select{
         color: var(--HeaFoo);
@@ -71,7 +94,7 @@ const MainBox = styled.main`
       grid-column-gap: 34px;
       grid-row-gap: 23px;
       margin-bottom: 85px;
-      @media screen and (max-width : 1450px){
+      @media screen and (max-width : 1400px){
         grid-template-columns: repeat(3, 1fr);
       }
       @media screen and (max-width : 1050px){
@@ -81,6 +104,12 @@ const MainBox = styled.main`
         grid-template-columns: repeat(1, 1fr);
       }
       .Box{
+        @media screen and (max-width:1440px){
+          width:300px;
+        }
+        @media screen and (max-width:720px){
+          width:500px;
+        }
         width : 325px;
         border: 1px solid #ccc;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -103,6 +132,13 @@ const MainBox = styled.main`
             margin: 0px 0px 14px 11px;
           }
           .tagImg{
+            @media screen and (max-width: 1440px){
+              width: 300px;
+            }
+            @media screen and (max-width:720px){
+              width:500px;
+              height: 500px;
+            }
             width: 323px;
             height: 323px;
           }
@@ -116,6 +152,9 @@ const MainBox = styled.main`
           align-items: center;
           height : 56px;
           border-top: 1px solid #ccc;
+          @media screen and (max-width: 1440px){
+            width: 100%;
+          }
           .btn {
             border: none;
             background: none;
