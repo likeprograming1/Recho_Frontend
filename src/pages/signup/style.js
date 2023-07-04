@@ -1,9 +1,12 @@
 import { styled } from "styled-components"
 
 const SignUpBox = styled.main`
-    margin: 100px auto;
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .title{
         display: flex;
         justify-content: center;
@@ -28,19 +31,19 @@ const SignUpBox = styled.main`
             font-size: var(--font18);
             color : var(--loginTitleFont);
             font-weight: 500;
-            width: 103px;
+            width: 83px;
             height: 50px;
             line-height: 50px;
             padding-left: 22px;
         }
         >:nth-child(2){
-            width: 305px;
+            width: 240px;
             height: 50px;
             margin-right: 10px;
         }
         >:nth-child(3){
             >input{
-            width: 160px;
+            width: 150px;
             height: 50px;
             border-radius: 20px;
             border: none;
@@ -125,8 +128,10 @@ const SignUpBox = styled.main`
     .check {
         display: flex;
         justify-content: right;
+        margin-left: 210px;
         .sercheck{
-            margin-left: 10px;
+            margin-right: 20px;
+            margin-left: 5px;
             >label{
             margin-left: 10px;
             color: var(--SignUpCheck);
@@ -144,10 +149,13 @@ const SignUpBox = styled.main`
         }
     }
     .signbutton {
-        margin-left: 75px;
+        margin: 0 30px 0 110px;
         display: flex;
         justify-content: space-between;
         max-width: 425px;
+        >:nth-child(1){
+            margin-right: 50px;
+        }
         >button{
             width: 195px;
             height: 52px;
@@ -163,26 +171,25 @@ const SignUpBox = styled.main`
     .already {
         display: flex;
         flex-direction: column;
-        float: right;
+        width: 120px;
+        margin-left: 370px;
         >h6{
-            float: right;
             background: none;
             border: none;
             text-decoration: none;
             font-size: 11px;
             color: #455368;
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 500;
         }
         >:nth-child(2){
             margin-top: 5px;
             margin-left: 65px;
-            float: right;
             background: none;
             border: none;
             text-decoration: none;
             font-size: 11px;
-            color: #455368;
+            color: #233232;
             cursor: pointer;
             font-weight: bold;
         }

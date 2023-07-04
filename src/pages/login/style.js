@@ -1,9 +1,12 @@
 import { styled } from "styled-components";
 
 const LoginBox = styled.main`
-    margin: 100px auto;
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .title{
         display: flex;
         justify-content: center;
@@ -80,7 +83,7 @@ const LoginBox = styled.main`
         display: flex;
         justify-content: space-between;
         float: right;
-        margin-top: 0px;
+        margin-left: 80px;
         >nav{
             >img{
             width: 40px;
@@ -100,7 +103,7 @@ const LoginBox = styled.main`
             text-decoration: none;
             font-size: 11px;
             color: var(--SignUpCheck);
-            font-weight: bold;
+            font-weight: 500;
             margin-bottom: 10px;
             }
             .gosignup{
@@ -110,7 +113,7 @@ const LoginBox = styled.main`
             text-decoration: none;
             font-size: 11px;
             color: var(--SignUpCheck);
-            font-weight: bold;
+            font-weight: 500;
             display: flex;
             >h5{
             text-decoration: none;
