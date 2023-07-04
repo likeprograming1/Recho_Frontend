@@ -1,9 +1,12 @@
 import { styled } from "styled-components";
 
 const LoginBox = styled.main`
-    margin: 100px auto;
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .title{
         display: flex;
         justify-content: center;

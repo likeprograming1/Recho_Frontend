@@ -3,8 +3,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom";
 import { ModalBackdrop, ModalView, ExitBtn} from "../modal/styleartist.js";
 import { ModalBackdrops, ModalViews, ExitBtns} from "../modal/normalmodal.js"
-import Reco from "../../Image/Header/RECHO.svg"
-import Recos from "../../Image/Header/RECHO2.png"
+import Reco from "../../Image/Header/RECHO.svg";
 const SignUp = () => {
 
   const [isOpen, setIsOpen] = useState(false);
@@ -147,7 +146,7 @@ const SignUp = () => {
         <ModalBackdrops onClick={openNormalModalHandler}>
             <ModalViews onClick={(e) => e.stopPropagation()}>
               <ExitBtns onClick={openNormalModalHandler}>x</ExitBtns>
-              <img src={Recos} alt='Logo-img'/>
+              <img src={Reco} alt='Logo-img'/>
               <div className='desc'>정말 일반회원으로 가입하시겠습니까?</div>
               <button>일반 회원 가입하기</button>
             </ModalViews>

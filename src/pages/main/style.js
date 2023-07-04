@@ -42,6 +42,8 @@ const MainBox = styled.main`
         border: none;
         background-color: var(--White);
         cursor: pointer;
+        text-decoration: none;
+        color: var(--HeaFoo);
         img{
           width: 200px;
           height: 223px;
@@ -118,6 +120,8 @@ const MainBox = styled.main`
           flex-direction: column;
           border: none;
           background-color: var(--White);
+          text-decoration: none;
+          color: var(--HeaFoo);
           .title{
             margin: 16px 0px 10px 11px;
             font-size : var(--font14);
@@ -142,6 +146,7 @@ const MainBox = styled.main`
             width: 323px;
             height: 323px;
           }
+          
         }
         .tagImgBox:hover{
           cursor: pointer;

@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const Header = () => {
   const [Search, setSearch] = useState(true);
-
+ 
   return (
     <HeaderBox>
       <div className="box">

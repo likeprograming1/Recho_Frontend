@@ -3,7 +3,7 @@ import Slide from "../../Hooks/slide/slide";
 import airpot from "../../Image/accessory/airpot.png";
 import cap from "../../Image/accessory/cap.jpg";
 import caps from "../../Image/accessory/caps.jpg";
-import clock from "../../Image/accessory/clock.jpeg";
+import clock from "../../Image/accessory/clock.svg";
 import danchu from "../../Image/accessory/danchu.jpeg";
 import haribo from "../../Image/accessory/haribo.jpg";
 import lucky from "../../Image/clothing/lucky.png";
@@ -13,36 +13,43 @@ import keyboard from "../../Image/electronic/keyboard.jpeg";
 import good from "../../Image/etc/good.svg";
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const Main = () => {
   
   const data = [{
+    id : 4,
     image : airpot,
     title : "에어팟 케이스 커스텀",
     price : "27,500원",
     content : "에어팟 케이스를 이용한 커스텀 마이징"
   }, {
+    id : 2,
     image : cap,
     title : "모자 커스텀",
     price : "17,500원",
     content : "모자를 이용한 커스텀 마이징"
   },{
+    id : 2,
     image : caps,
     title : "모자 커스텀",
     price : "17,500원",
     content : "모자를 이용한 커스텀 마이징"
   },{
+    id : 2,
     image : clock,
     title : "시계 커스텀",
     price : "17,500원",
     content : "시계를 이용한 커스텀 마이징"
   },{
+    id : 3,
     image : haribo,
     title : "팔찌 커스텀",
     price : "17,500원",
     content : "하리보를 팔찌 커스텀 마이징"
   },{
+    id : 3,
     image : danchu,
     title : "단츄 커스텀",
     price : "5,000원",
@@ -52,48 +59,56 @@ const Main = () => {
   const [Select, setSelect] = useState(0);
   const tagImage = [{
     data : [{
+      id : 0,
       image : lucky,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 0,
     },{
+      id : 0,
       image : lucky,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 1,
     },{
+      id : 0,
       image : lucky,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 2,
     },{
+      id : 0,
       image : lucky,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 3,
     },{
+      id : 0,
       image : lucky,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 4,
     },{
+      id : 0,
       image : lucky,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 5,
     },{
+      id : 0,
       image : lucky,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 6,
     },{
+      id : 0,
       image : lucky,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
@@ -102,48 +117,56 @@ const Main = () => {
     }],
   },{
     data : [{
+      id : 1,
       image : guga3,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 0,
     },{
+      id : 1,
       image : guga3,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 1,
     },{
+      id : 1,
       image : guga3,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 2,
     },{
+      id : 1,
       image : guga3,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 3,
     },{
+      id : 1,
       image : guga3,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 4,
     },{
+      id : 1,
       image : guga3,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 5,
     },{
+      id : 1,
       image : guga3,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 6,
     },{
+      id : 1,
       image : guga3,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
@@ -152,48 +175,56 @@ const Main = () => {
     }],
   },{
     data : [{
+      id : 2,
       image : shoes,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 0,
     },{
+      id : 2,
       image : shoes,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 1,
     },{
+      id : 2,
       image : shoes,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 2,
     },{
+      id : 2,
       image : shoes,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 3,
     },{
+      id : 2,
       image : shoes,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 4,
     },{
+      id : 2,
       image : shoes,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 5,
     },{
+      id : 2,
       image : shoes,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 6,
     },{
+      id : 2,
       image : shoes,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
@@ -202,148 +233,172 @@ const Main = () => {
     }],
   },{
     data : [{
-      image : caps,
+      id : 3,
+      image : danchu,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 0,
     },{
-      image : caps,
+      id : 3,
+      image : danchu,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 1,
     },{
-      image : caps,
+      id : 3,
+      image : danchu,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 2,
     },{
-      image : caps,
+      id : 3,
+      image : danchu,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 3,
     },{
-      image : caps,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 4,
-    },{
-      image : caps,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 5,
-    },{
-      image : caps,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 6,
-    },{
-      image : caps,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 7,
-    }],
-  },{
-    data : [{
-      image : keyboard,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 0,
-    },{
-      image : keyboard,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 1,
-    },{
-      image : keyboard,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 2,
-    },{
-      image : keyboard,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 3,
-    },{
-      image : keyboard,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 4,
-    },{
-      image : keyboard,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 5,
-    },{
-      image : keyboard,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 6,
-    },{
-      image : keyboard,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 7,
-    }],
-  },{
-    data : [{
-      image : lucky,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 0,
-    },{
-      image : airpot,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 1,
-    },{
-      image : caps,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 2,
-    },{
-      image : clock,
-      title : "하리보 곰돌이 악세서리",
-      content : "KIM PLOOW",
-      price : "₩13,500",
-      like : 3,
-    },{
+      id : 3,
       image : danchu,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 4,
     },{
+      id : 3,
+      image : danchu,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 5,
+    },{
+      id : 3,
+      image : danchu,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 6,
+    },{
+      id : 3,
+      image : danchu,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 7,
+    }],
+  },{
+    data : [{
+      id : 4,
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 0,
+    },{
+      id : 4,
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 1,
+    },{
+      id : 4,
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 2,
+    },{
+      id : 4,
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 3,
+    },{
+      id : 4,
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 4,
+    },{
+      id : 4,
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 5,
+    },{
+      id : 4,
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 6,
+    },{
+      id : 4,
+      image : keyboard,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 7,
+    }],
+  },{
+    data : [{
+      id : 5,
+      image : lucky,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 0,
+    },{
+      id : 5,
+      image : airpot,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 1,
+    },{
+      id : 5,
+      image : caps,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 2,
+    },{
+      id : 5,
+      image : clock,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 3,
+    },{
+      id : 5,
+      image : danchu,
+      title : "하리보 곰돌이 악세서리",
+      content : "KIM PLOOW",
+      price : "₩13,500",
+      like : 4,
+    },{
+      id : 5,
       image : guga3,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 5,
     },{
+      id : 5,
       image : shoes,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
       price : "₩13,500",
       like : 6,
     },{
+      id : 5,
       image : keyboard,
       title : "하리보 곰돌이 악세서리",
       content : "KIM PLOOW",
@@ -357,13 +412,14 @@ const Main = () => {
       <h2>실시간 베스트</h2>
       <div className="BestBox">
       {data && data.map(item => {
+        let address = `/morepage/${item.id}`;
         return (
-          <button className="Best">
+          <Link to={address} className="Best">
             <img src={item.image} alt="상품"></img>
             <b className="title">{item.title}</b>
             <b className="price">{item.price}</b>
             <span className="content">{item.content}</span>
-          </button>
+          </Link>
         )
       })}
       </div>
@@ -378,14 +434,15 @@ const Main = () => {
       })}
       <div className="boxs">
       {tagImage[Select].data && tagImage[Select].data.map(data => {
+        let address = `/morepage/${data.id}`;
         return (
           <div className="Box">
-            <button className="tagImgBox">
+            <Link to={address} className="tagImgBox">
               <img src={data.image} alt="상품 이미지" className="tagImg"></img>
               <b className="title">{data.title}</b>
               <p className="content">{data.content}</p>
               <b className="price">{data.price}</b>
-            </button>
+            </Link>
             <span className="likeBox">
               <button className="btn"><img src={good} alt="like-button"></img></button>
               <p>{data.like}</p>

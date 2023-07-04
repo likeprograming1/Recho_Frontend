@@ -22,6 +22,7 @@ const variables = createGlobalStyle`
     --logSignTitleFont : #455368;
     --SignUpCheck : #AFB9CA;
     --SignUpButton : #DDE5FD;
+    --BtnColor : #7063EC;
     
     // font-size
     --font9 : 9px;
@@ -31,6 +32,7 @@ const variables = createGlobalStyle`
     --font18 : 18px;
     --font20 : 20px;
     --font18 : 18px;
+    --font34 : 34px;
   }
 `;
 
