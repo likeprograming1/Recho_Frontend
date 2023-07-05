@@ -1,8 +1,9 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 const More = styled.main`
   margin: 0 auto;
   padding-top: 83px;
+  position: relative;
   .tagsName{
     max-width : 1403px;
     margin: 0 auto;

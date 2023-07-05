@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from "react-router-dom";
 import HeaderBox from "./style";
 import RECHO from "../../Image/Header/RECHO.svg";

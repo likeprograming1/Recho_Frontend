@@ -1,4 +1,5 @@
-import { useParams } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { useNavigate, useParams } from "react-router-dom";
 import More from "./style";
 import unlike from "../../Image/etc/unlike.png";
 
@@ -22,9 +23,15 @@ import gagu2 from "../../Image/furniture/gagu2.jpeg";
 import gagu3 from "../../Image/furniture/gagu3.jpeg";
 import gagu4 from "../../Image/furniture/gagu3.jpeg";
 import gagu5 from "../../Image/furniture/gagu3.jpeg";
+import DealModal from './modal';
+import { useDispatch, useSelector } from 'react-redux';
+import { modalstate } from '../../redux/reducer/modalSlice';
+
 const MoreItemPage = () => {
   const id = useParams().id;
-  console.log(id);
+  const Modal = useSelector(state => state.deal.modal);
+  const navigate = useNavigate();
+  const dispath = useDispatch();
   const tags = ["의류", "가구", "잡화", "악세서리", "전자기기", "AS가능"];
   const tag = ["옷", "쇼파", "신발", "단추", "키보드", "가능"];
   const data = [{
@@ -63,7 +70,18 @@ const MoreItemPage = () => {
   ,[gagu1, gagu2, gagu3,gagu4, gagu5]
   ,[image1,image2,image3,image4,image5]];
 
-  return <More> 
+  const handleModal = () => {
+    dispath(modalstate());
+  }
+  const handleNavigate = () => {
+    navigate("/artist");
+  }
+  useEffect(()=>{
+   window.scrollTo(0,0);
+  },[])
+
+  return <More>  
+    {Modal ? <DealModal data={data[id]}></DealModal> : null }
     <section className="tagsName">
       <h2 className="tag">작업의뢰</h2>
       <h2 className="tag">{tags[id]}</h2>
@@ -104,10 +122,10 @@ const MoreItemPage = () => {
           <p className="TotalPrice">{data[id].totalPrice}</p>
           <div className="listFooter">
             <img src={unlike} alt="likebtn" className="likeImg"></img>
-            <button className="orderBtn">의뢰하기</button>
+            <button className="orderBtn" onClick={()=>{handleModal()}}>의뢰하기</button>
           </div>
         </div>
-          <button className="artistpage">'{data[id].artist}'님의 다른 작품 보러가기</button>
+          <button className="artistpage" onClick={() => {handleNavigate()}}>'{data[id].artist}'님의 다른 작품 보러가기</button>
         </div>
       </div>
       {
@@ -125,8 +143,8 @@ const MoreItemPage = () => {
       </div>
     </section>
     <section className="productImgBox">
-      {dataMoreImg[id] && dataMoreImg[id].map(item => {
-        return <img src={item} alt="productimg" className="product"></img>
+      {dataMoreImg[id] && dataMoreImg[id].map((item, idx) => {
+        return <img src={item} alt="productimg" className="product" key={idx}></img>
       })}
       
     </section>
