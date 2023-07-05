@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import More from "./style";
 import unlike from "../../Image/etc/unlike.png";
 
@@ -30,6 +30,7 @@ import { modalstate } from '../../redux/reducer/modalSlice';
 const MoreItemPage = () => {
   const id = useParams().id;
   const Modal = useSelector(state => state.deal.modal);
+  const navigate = useNavigate();
   const dispath = useDispatch();
   const tags = ["의류", "가구", "잡화", "악세서리", "전자기기", "AS가능"];
   const tag = ["옷", "쇼파", "신발", "단추", "키보드", "가능"];
@@ -72,7 +73,9 @@ const MoreItemPage = () => {
   const handleModal = () => {
     dispath(modalstate());
   }
-
+  const handleNavigate = () => {
+    navigate("/artist");
+  }
   useEffect(()=>{
    window.scrollTo(0,0);
   },[])
@@ -122,7 +125,7 @@ const MoreItemPage = () => {
             <button className="orderBtn" onClick={()=>{handleModal()}}>의뢰하기</button>
           </div>
         </div>
-          <button className="artistpage">'{data[id].artist}'님의 다른 작품 보러가기</button>
+          <button className="artistpage" onClick={() => {handleNavigate()}}>'{data[id].artist}'님의 다른 작품 보러가기</button>
         </div>
       </div>
       {
