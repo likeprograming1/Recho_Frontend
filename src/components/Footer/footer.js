@@ -1,3 +1,4 @@
+import React from 'react';
 import FooterBox from "./style";
 import { Link } from "react-router-dom";
 import instagram from "../../Image/Footer/instagram.svg";

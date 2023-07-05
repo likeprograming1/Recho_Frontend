@@ -1,3 +1,4 @@
+import React from "react";
 import slide1 from "../../Image/slide/slide1.svg";
 import slide2 from "../../Image/slide/slide2.svg";
 import slide3 from "../../Image/slide/slide3.svg";
@@ -5,7 +6,7 @@ import slide4 from "../../Image/slide/slide4.svg";
 import slide5 from "../../Image/slide/slide5.svg";
 import right from "../../Image/slide/right.png";
 import left from "../../Image/slide/left.png";
-import { styled } from "styled-components";
+import styled from "styled-components";
 import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 import SlideBox from "./style";

@@ -1,3 +1,5 @@
+
+import React from 'react';
 import MainBox from "./style";
 import Slide from "../../Hooks/slide/slide";
 import airpot from "../../Image/accessory/airpot.png";
