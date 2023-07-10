@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ModalBackdrop, ModalView, ExitBtn} from "../modal/styleartist.js";
 import { ModalBackdrops, ModalViews, ExitBtns} from "../modal/normalmodal.js"
 import Reco from "../../Image/Header/RECHO.svg";
+
 const SignUp = () => {
 
   const [isOpen, setIsOpen] = useState(false);
@@ -25,32 +26,101 @@ const SignUp = () => {
     setIsOpens(!isOpens)
   }
 
-// ----------------------------------------
+  // ----------------------------------------
 
-//유효성 검사 -------------------------------
+  //유효성 검사 -------------------------------
+  //상태 초기값 설정
 
-  // const [name, setName] = useState("")
-  // const [email, setEmail] = useState("")
-  // const [password, setPassword] =useState("")
-  // const [nameCheck, setNameCheck] =useState("")
-    // const validateName = (name) => {
-  //   return name
-  //     .toLowerCase()
-  //     .match(/^[ㄱ-ㅎ|가-힣|a-z|A-Z|].{3,10}$/);
-  // };
+  const [name, setName] = useState("");
+  const [nickname, setNickname] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [emailcom, setEmailCom] = useState("");
 
-  // const isNameValid = validateName(name);
+  //유효성검사 오류 메세지 설정
 
-  // const onChangeName = useCallback( async (e) => {
-  //   const currName = e.target.value;
-  //   setName(currName);
+  const [nameMessage, setNameMessage] = useState("");
+  const [nickMessage, setNickMessage] = useState("");
+  const [passwordMessage, setPasswordMessage] = useState("");
+  const [emailMessage, setEmailMessage] = useState("");
+  const [emailcomMessage, setEmailComMessage] = useState("");
 
-  //   if (!validateName(currName)) {
-  //     setNameCheck("이메일 형식이 올바르지 않습니다.")
-  //   } else {
-  //       setNameCheck("올바른 이메일 형식입니다.")
-  //     }
-  //   })
+  //유효성 검사 세팅(맞는지 Boolean)
+
+  const [isName, setIsName] = useState(false);
+  const [isNickname, setIsNickname] = useState(false);
+  const [isPassword, setIsPassword] = useState(false);
+  const [isEmail, setIsEmail] = useState(false);
+  const [isEmailCom, setIsEmailCom] = useState(false);
+  //이벤트 핸들러
+
+  const onChangeName = (e) => {
+    const currentName = e.target.value;
+    setName(currentName);
+    const idRegExp = /^[가-힣]{2,12}$/;
+    if (!idRegExp.test(currentName)) {
+      setNameMessage("실명을 한글로 입력해주세요!");
+      setIsName(isName);
+    } 
+    else {
+      setNameMessage(); 
+      setIsName(isName);
+    }
+  };
+  const onChangePass = (e) => {
+    const currentPassword = e.target.value;
+    setPassword(currentPassword);
+    const passwordRegExp =
+      /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
+    if (!passwordRegExp.test(currentPassword)) {
+      setPasswordMessage(
+        "숫자/영문자/특수문자 조합으로 8자리 이상 입력해주세요!"
+      );
+      setIsPassword(isPassword);
+    } else {
+      setPasswordMessage();
+      setIsPassword(isPassword);
+    }
+  };
+  const onChangeEmail = (e) => {
+    const currentEmail = e.target.value;
+    setEmail(currentEmail);
+    const emailRegExp =
+    /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{1,20}$/;
+    if (!emailRegExp.test(currentEmail)) {
+      setEmailMessage("이메일의 형식에 맞지 않습니다!");
+      setIsEmail(isEmail);
+    } else {
+      setEmailMessage();
+      setIsEmail(isEmail);
+    }
+  };
+  const onChangeEmailCom = (e) => {
+    const currentEmailCom = e.target.value;
+    setEmailCom(currentEmailCom);
+    const domainRegExp = /^(?=.*[a-z])[a-z]+\.com$/;
+
+    if (!domainRegExp.test(currentEmailCom)) {
+      setEmailComMessage("이메일의 형식에 맞지 않습니다!");
+      setIsEmailCom(isEmailCom);
+    } else {
+      setEmailComMessage();
+      setIsEmailCom(isEmailCom);
+    }
+  };
+  const onChangeNickname = (e) => {
+    const currentNickname = e.target.value;
+    setNickname(currentNickname);
+ 
+    if (currentNickname.length < 3 || currentNickname.length > 11) {
+      setNickMessage("닉네임은 2글자 이상 10글자 이하로 입력해주세요!");
+      setIsNickname(isNickname);
+    } else {
+      setNickMessage();
+      setIsNickname(isNickname);
+    }
+  };
+
 
   // --------------------------------------------------
 
@@ -66,7 +136,7 @@ const SignUp = () => {
       </section>
       <section className="namepsbar namebar">
       <h4>이름</h4>
-      <input className="nameinput" type="text" name="name"
+      <input className="nameinput" type="text" value={name} name="name" onChange={onChangeName}
       // 클릭될 때 작동
 				onFocus={() => {
 					setNameInputClick(true);
@@ -77,21 +147,23 @@ const SignUp = () => {
 				}} placeholder={nameInputClick === true ? "" : "실명을 입력해주세요"}></input>
         <h5>특수문자 제외 10자이하</h5>
       </section>
+      <p className="message1">{nameMessage}</p>
       <section className="emailbar">
         <h4>이메일</h4>
-        <input type="email" name="email" 				
+        <input type="email" name="email" value={email} onChange={onChangeEmail}
         onFocus={() => {
 					setEmailInputClick(true);
 				}}
 				onBlur={() => {
 					setEmailInputClick(false);
 				}} placeholder={emailInputClick === true ? "" : "이메일을 입력해주세요"}></input>
-        <input type="email" name="email" placeholder="naver.com"></input>
+        <input type="email" name="email" placeholder="naver.com" onChange={onChangeEmailCom}></input>
         <button>이메일 중복체크</button>
       </section>
+      <p className='message2'>{emailMessage}</p>
       <section className="namepsbar psbar">
         <h4>비밀번호</h4>
-        <input type="password" name="password" 
+        <input type="password" name="password" value={password} onChange={onChangePass}
         onFocus={() => {
 					setPasswordInputClick(true);
 				}}
@@ -100,9 +172,10 @@ const SignUp = () => {
 				}} placeholder={passwordInputClick === true ? "" : "비밀번호를 입력해주세요"} ></input>
         <h5>(영문 대소문자, 특수문자 포함 8자 이상)</h5>
       </section>
+      <p className='message3'>{passwordMessage}</p>
       <section className="nickbar">
       <h4>닉네임</h4>
-      <input type="nickname" name="nickname" 
+      <input type="nickname" name="nickname" value={nickname} onChange={onChangeNickname}
         onFocus={() => {
 					setNickInputClick(true);
 				}}
@@ -111,6 +184,7 @@ const SignUp = () => {
 				}} placeholder={nickInputClick === true ? "" : "닉네임을 입력해주세요"} ></input>
       <h5>특수문자 제외 10자이하</h5>
       </section>
+      <p className='message4'>{nickMessage}</p>
       <section className="check">
         <div className="sercheck">
           <input input className="servicecheck" type="checkbox" name="service">
