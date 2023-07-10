@@ -31,7 +31,7 @@ const Header = () => {
             </div>
           )}
             <Link to="#" className="navBtn">고객센터</Link>
-            <Link to="#" className="navBtn">관신상품</Link>
+            <Link to="#" className="navBtn">관심상품</Link>
             <Link to="/login" className="sign-navBtn">로그인</Link>
             <img src={sidebar} alt="search-butoon"  className="navSidebar"></img>
           </div>
