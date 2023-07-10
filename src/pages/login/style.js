@@ -86,7 +86,7 @@ const LoginBox = styled.main`
         margin-left: 80px;
         >nav{
             >img{
-            width: 40px;
+            width: 120px;
             height: 40px;
             margin-right: 50px;
             cursor: pointer;

@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 import { ModalBackdrop, ModalView, ExitBtn} from "../modal/styleartist.js";
 import { ModalBackdrops, ModalViews, ExitBtns} from "../modal/normalmodal.js"
 import Reco from "../../Image/Header/RECHO.svg";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
-
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpens, setIsOpens] = useState(false);
 
@@ -27,6 +29,29 @@ const SignUp = () => {
   }
 
   // ----------------------------------------
+
+  async function postSingUp() {
+    try {
+      const response = await axios.post('/user', {
+        name: name,
+        email: email,
+        password: password,
+        nickname: nickname
+      });
+      if (response.status === 201) {
+        navigate('/login');
+      }
+    } catch (error) {
+      if (error.response.status === 409) {
+        alert('중복된 이메일 입니다.');
+        console.log(error);
+      } else {
+        alert(error.response.status);
+        console.log(error);
+      }
+    }
+  }
+
 
   //유효성 검사 -------------------------------
   //상태 초기값 설정
@@ -189,14 +214,14 @@ const SignUp = () => {
         <div className="sercheck">
           <input input className="servicecheck" type="checkbox" name="service">
           </input>
-          <label for="service">
+          <label htmlFor="service">
             서비스 이용약관 
           </label>
         </div>
       <div className="corcheck">
         <input className="checkinput" type="checkbox" >
         </input>
-        <label for="correct"> 
+        <label htmlFor="correct"> 
           개인정보 수집 및 이용동의 
         </label >
       </div>
@@ -223,7 +248,7 @@ const SignUp = () => {
               <ExitBtns onClick={openNormalModalHandler}>x</ExitBtns>
               <img src={Reco} alt='Logo-img'/>
               <div className='desc'>정말 일반회원으로 가입하시겠습니까?</div>
-              <button>일반 회원 가입하기</button>
+              <button onClick={postSingUp}>일반 회원 가입하기</button>
             </ModalViews>
           </ModalBackdrops>
           : null

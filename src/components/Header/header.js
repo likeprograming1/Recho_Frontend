@@ -8,7 +8,25 @@ import { useState } from "react";
 
 const Header = () => {
   const [Search, setSearch] = useState(true);
- 
+  const KakaoLogin = () => {
+    window.location.href = `http://localhost:3000/auth/kakao`; 
+  
+    // axios.get(`/auth/token`)
+    // .then((res) => {
+    //   console.log(res);
+    //   const { access_token } = res.data;
+    //   axios.get(
+    //       `/auth/kakao`,
+    //       {},
+    //       {
+    //           headers: {
+    //               Authorization: `Bearer ${access_token}`,
+    //           }
+    //       }
+      
+    //   )}
+    //   )
+  }
   return (
     <HeaderBox>
       <div className="box">
@@ -32,7 +50,7 @@ const Header = () => {
           )}
             <Link to="#" className="navBtn">고객센터</Link>
             <Link to="#" className="navBtn">관심상품</Link>
-            <Link to="/login" className="sign-navBtn">로그인</Link>
+            <Link onClick={KakaoLogin} className="sign-navBtn">로그인</Link>
             <img src={sidebar} alt="search-butoon"  className="navSidebar"></img>
           </div>
         </nav> 

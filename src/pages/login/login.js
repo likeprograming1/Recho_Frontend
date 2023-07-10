@@ -2,12 +2,45 @@ import React from 'react';
 import LoginBox from "./style"
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Kakao from "../../Image/Footer/kakao.svg"
+import Kakao from "../../Image/login/kakao_login.png"
 import Git from "../../Image/Footer/github.svg"
+// import {useCookies} from 'react-cookie'
+// import axios from 'axios';
+
+
 const Login = () => {
 
 const [nameInputClick, setNameInputClick] = useState(false);
 const [passwordInputClick, setPasswordInputClick] = useState(false);
+const [name, setName] = useState("")
+const [password, setPassword] = useState("")
+
+console.log(name, password)
+
+
+// Kakao로그인 경로
+const KakaoLogin = () => {
+  window.location.href = `http://localhost:3000/auth/kakao`; 
+
+  // axios.get(`/auth/token`)
+  // .then((res) => {
+  //   console.log(res);
+  //   const { access_token } = res.data;
+  //   axios.get(
+  //       `/auth/kakao`,
+  //       {},
+  //       {
+  //           headers: {
+  //               Authorization: `Bearer ${access_token}`,
+  //           }
+  //       }
+    
+  //   )}
+  //   )
+}
+
+// Kakao로그인 토큰 발급
+
 
 
   return (
@@ -18,7 +51,7 @@ const [passwordInputClick, setPasswordInputClick] = useState(false);
         </section>
       <section className="namepsbar namebar">
         <h4>아이디</h4>
-        <input className="nameinput" type="text" name="name"
+        <input className="nameinput" type="text" onChange={(e)=>{setName(e.target.value)}}
       // 클릭될 때 작동
 				onFocus={() => {
 					setNameInputClick(true);
@@ -31,6 +64,7 @@ const [passwordInputClick, setPasswordInputClick] = useState(false);
       <section className="namepsbar psbar">
         <h4>비밀번호</h4>
         <input type="password" name="password" 
+         onChange={(e)=>{setPassword(e.target.value)}}
         onFocus={() => {
 					setPasswordInputClick(true);
 				}}
@@ -43,7 +77,7 @@ const [passwordInputClick, setPasswordInputClick] = useState(false);
       </section>
       <section className="already">
         <nav className="oathimg">
-          <img src={Kakao} alt="OathImg"></img>
+          <img src={Kakao} alt="OathImg" onClick={KakaoLogin}></img>
           <img src={Git} alt="OathImg"></img>
         </nav>
         <nav className="linkcorr">
