@@ -3,10 +3,15 @@ import styled from "styled-components";
 const MainBox = styled.main`
   margin: 0 auto;
   max-width: 1403px;
+  width: 100%;
   background-color: var(--White);
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  @media screen and (max-width: 1440px){
+    margin: 0px 50px;
+  }
   .realTime{
     margin-top: 47px;
     width: 100%;
@@ -35,6 +40,9 @@ const MainBox = styled.main`
         grid-template-columns: repeat(2, 1fr);
       }
       .Best{
+        @media screen and (max-width: 1440px){
+          margin-right: 25px;
+        }
         width: 200px;
         display: flex;
         flex-direction: column;
@@ -178,6 +186,19 @@ const MainBox = styled.main`
     }
     
   }
+  .sitetalk{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    .talk{
+      border: none;
+      background: none;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+  
 `;
 
 export default MainBox;

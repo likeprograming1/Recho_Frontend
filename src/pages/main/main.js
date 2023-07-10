@@ -13,13 +13,17 @@ import guga3 from "../../Image/furniture/gagu3.jpeg";
 import shoes from "../../Image/sundries/customshoes.jpeg";
 import keyboard from "../../Image/electronic/keyboard.jpeg";
 import good from "../../Image/etc/good.svg";
-
+import talk from "../../Image/etc/talk.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Chatting from '../chatting/chatting';
+import { useDispatch, useSelector } from 'react-redux';
+import { modalstate } from '../../redux/reducer/modalSlice';
+import List from '../chatting/list';
 
 
 const Main = () => {
-  
+  const dispath = useDispatch();
   const data = [{
     id : 4,
     image : airpot,
@@ -59,6 +63,9 @@ const Main = () => {
   }];
   const tag = ["의  류", "가  구", "잡  화", "악세서리", "전자기기", "AS 가능"];
   const [Select, setSelect] = useState(0);
+  const Chat = useSelector(state => state.deal.modal);
+  const home = useSelector(state => state.deal.back);
+  console.log(home);
   const tagImage = [{
     data : [{
       id : 0,
@@ -408,8 +415,14 @@ const Main = () => {
       like : 7,
     }],
   }]
+  const handleModal = () => {
+    dispath(modalstate());
+  }
   return (<MainBox>
     <Slide />
+    {Chat ? 
+    home ? <List /> : <Chatting /> 
+    : null }
     <section className="realTime">
       <h2>실시간 베스트</h2>
       <div className="BestBox">
@@ -453,6 +466,11 @@ const Main = () => {
         )
       })}
       </div>
+    </section>
+    <section className='sitetalk'>
+      <button className='talk' onClick={()=>{handleModal()}}>
+        <img src={talk} alt="talk-img" className='talk-img'></img>
+      </button>
     </section>
   </MainBox>);
 }

@@ -78,6 +78,20 @@ const Modal = styled.section`
           }
           .Iput {
             margin-bottom: 13px;
+            .upload{
+              display: none;
+            }
+            .file {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 23px;
+              height: 23px;
+              background-color: #7063EC;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+            }
           }
         }
       }
@@ -94,7 +108,7 @@ const Modal = styled.section`
         justify-content: center;
         .mun{
           margin-right: 30px;
-          p{
+          span{
             font-size: 12px;
             font-weight: 600;
           }
