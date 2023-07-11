@@ -190,6 +190,16 @@ const MainBox = styled.main`
     position: fixed;
     right: 10px;
     bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    .upload{
+      margin-bottom: 10px;
+      .upload-img {
+        width: 70px;
+        height: 70px;
+      }
+    }
+    .upload,
     .talk{
       border: none;
       background: none;

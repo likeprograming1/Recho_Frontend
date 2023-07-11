@@ -13,6 +13,7 @@ const Login = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
+<<<<<<< HEAD
   console.log(name, password);
 
   // Kakao로그인 경로
@@ -35,6 +36,15 @@ const Login = () => {
   };
 
   // Kakao로그인 토큰 발급
+=======
+const [nameInputClick, setNameInputClick] = useState(false);
+const [passwordInputClick, setPasswordInputClick] = useState(false);
+  const handleBtn = () => {
+    window.location.href = "http://localhost:3000/auth/kakao";
+    
+  }
+  return (
+>>>>>>> e5e20d21d696c0af6285c0b462a8e544006e7d82
 
   return (
     <LoginBox>
@@ -86,7 +96,13 @@ const Login = () => {
       </section>
       <section className="already">
         <nav className="oathimg">
+<<<<<<< HEAD
           <img src={Kakao} alt="OathImg" onClick={KakaoLogin}></img>
+=======
+          <button onClick={()=>{handleBtn()}}>
+          <img src={Kakao} alt="OathImg"></img>
+          </button>
+>>>>>>> e5e20d21d696c0af6285c0b462a8e544006e7d82
           <img src={Git} alt="OathImg"></img>
         </nav>
         <nav className="linkcorr">
