@@ -8,7 +8,10 @@ const Login = () => {
 
 const [nameInputClick, setNameInputClick] = useState(false);
 const [passwordInputClick, setPasswordInputClick] = useState(false);
-
+  const handleBtn = () => {
+    window.location.href = "http://localhost:3000/auth/kakao";
+    
+  }
   return (
 
     <LoginBox>
@@ -42,7 +45,9 @@ const [passwordInputClick, setPasswordInputClick] = useState(false);
       </section>
       <section className="already">
         <nav className="oathimg">
+          <button onClick={()=>{handleBtn()}}>
           <img src={Kakao} alt="OathImg"></img>
+          </button>
           <img src={Git} alt="OathImg"></img>
         </nav>
         <nav className="linkcorr">
