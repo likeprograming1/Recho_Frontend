@@ -7,6 +7,23 @@ const SignUpBox = styled.main`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    p{
+        font-size: 9px;
+        color: #FF0000;
+        font-weight: 400;
+    }
+    .message1{
+        padding-left: 390px;
+    }
+    .message2{
+        padding-left: 350px;
+    }
+    .message3{
+        padding-left: 250px;
+    }
+    .message4{
+        padding-left: 300px;
+    }
     .title{
         display: flex;
         justify-content: center;
