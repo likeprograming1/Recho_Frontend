@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useEffect } from "react";
 import ProfileBox from "./style";
 import UserProfile from "../../Image/artist/userprofile.svg";
 import { Link, useParams } from "react-router-dom";
@@ -18,10 +18,13 @@ import guga3 from "../../Image/furniture/gagu3.jpeg";
 import shoes from "../../Image/sundries/customshoes.jpeg";
 import keyboard from "../../Image/electronic/keyboard.jpeg";
 import good from "../../Image/etc/good.svg";
+import { modalstate } from "../../redux/reducer/modalSlice";
+import DealModal from "../moreItempage/modal.js";
+import { useDispatch, useSelector } from "react-redux";
 
 const Artist = () => {
   const user = useParams().id;
-  console.log(user);
+  const dispath = useDispatch();
   const tagImage = [
     {
       data: [
@@ -432,9 +435,18 @@ const Artist = () => {
       ],
     },
   ];
+  const Modal = useSelector((state) => state.deal.modal);
+  
+  const handleModal = () => {
+    dispath(modalstate());
+  };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <ProfileBox>
+      {Modal ? <DealModal data={tagImage[user].data}></DealModal> : null}
       <article className="artpf">
         <Link to={`/artist/${user}`}>
           <img src={UserProfile} alt="UserImg" />
@@ -445,7 +457,14 @@ const Artist = () => {
         <nav className="tagbutton">
           <button>팔로우</button>
           <button>거래내역</button>
-          <button>의뢰하기</button>
+          <button
+            className="modalbutton"
+            onClick={() => {
+              handleModal();
+            }}
+          >
+            의뢰하기
+          </button>
           <button>· · ·</button>
         </nav>
       </article>

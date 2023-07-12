@@ -32,6 +32,7 @@ const variables = createGlobalStyle`
     --font18 : 18px;
     --font20 : 20px;
     --font22 : 22px;
+    --font24 : 24px;
     --font34 : 34px;
   }
 `;

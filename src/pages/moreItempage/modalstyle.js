@@ -74,6 +74,9 @@ const Modal = styled.section`
           li:nth-child(1){
             margin-top: 10px;
           }
+          li:nth-child(4){
+            margin-bottom: 80px;
+          }
           .list {
             margin-bottom: 33px;
           }

@@ -5,6 +5,7 @@ import RECHO from "../../Image/Header/RECHO.svg";
 import { useDispatch } from 'react-redux';
 import { modalstate } from '../../redux/reducer/modalSlice';
 import clip from "../../Image/etc/clip.svg";
+import { dataState } from '../../redux/reducer/productSlice';
 
 const DealModal = (data) => {
   const dispatch = useDispatch();
@@ -23,7 +24,10 @@ const DealModal = (data) => {
     }
   })
   
-  
+  const handleDeal = () => {
+    dispatch(dataState(data));
+    dispatch(modalstate());
+  }
   return <Modal>
     <div className='modals'>
       <div className='modal'>
@@ -36,10 +40,6 @@ const DealModal = (data) => {
         </div>
         <div className='boxs'>
           <ul className='box'>
-            <li className='list'>
-              <h3>모델명</h3>
-              <h3>{data.data.name}</h3>
-            </li>
             <li className='list'>
               <h3>작업비용</h3>
               <h3>{data.data.price}</h3>
@@ -56,10 +56,6 @@ const DealModal = (data) => {
               <h3>AS가능 유무</h3>
               <h3>{data.data.as}</h3>
             </li>
-            <li className='list'>
-              <h3>배송비</h3>
-              <h3>{data.data.deliveryPay}</h3>
-            </li>
             <li className='Iput'>
               <small>이용약관 동의 및 개인정보 수집 동의</small>
               <input type='checkbox' />
@@ -73,13 +69,12 @@ const DealModal = (data) => {
             </li>
           </ul>
         </div>
-        <h2 className='total'>Total : {data.data.totalPrice}</h2>
         <div className='footBox'>
           <div className='mun'>
             <span>제품 특성 상 결제 후에는 교환/환불이 어렵습니다.</span>
             <span>결제 하시겠습니까?</span>
           </div>
-          <button className='cashbtn' onClick={()=>{dispatch(modalstate());}}>
+          <button className='cashbtn' onClick={()=>{handleDeal();}}>
             결제하기
           </button>
         </div>
