@@ -1,32 +1,39 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import HeaderBox from "./style";
 import RECHO from "../../Image/Header/RECHO.svg";
 import search from "../../Image/Header/search.svg";
 import sidebar from "../../Image/Header/sidebar.svg";
+import { Cookies } from "react-cookie";
 
 const Header = () => {
   const navigate = useNavigate();
   const [Search, setSearch] = useState(true);
+
   const KakaoLogin = () => {
-    navigate.push("/auth/kakao");
-
-    // axios.get(`/auth/token`)
-    // .then((res) => {
-    //   console.log(res);
-    //   const { access_token } = res.data;
-    //   axios.get(
-    //       `/auth/kakao`,
-    //       {},
-    //       {
-    //           headers: {
-    //               Authorization: `Bearer ${access_token}`,
-    //           }
-    //       }
-
-    //   )}
-    //   )
+    navigate.push("/");
   };
+
+  // const KakaoLogin = () => {
+  //   navigate.push("/auth/kakao");
+
+  //   // axios.get(`/auth/token`)
+  //   // .then((res) => {
+  //   //   console.log(res);
+  //   //   const { access_token } = res.data;
+  //   //   axios.get(
+  //   //       `/auth/kakao`,
+  //   //       {},
+  //   //       {
+  //   //           headers: {
+  //   //               Authorization: `Bearer ${access_token}`,
+  //   //           }
+  //   //       }
+
+  //   //   )}
+  //   //   )
+  // };
   return (
     <HeaderBox>
       <div className="box">

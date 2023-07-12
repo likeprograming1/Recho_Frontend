@@ -1,11 +1,16 @@
-import React from "react";
+import { React, useEffect } from "react";
 import ProfileBox from "./style";
 import UserProfile from "../../Image/artist/userprofile.svg";
 import { Link } from "react-router-dom";
 import lucky from "../../Image/clothing/lucky.png";
 import good from "../../Image/etc/good.svg";
+import { modalstate } from "../../redux/reducer/modalSlice";
+import DealModal from "../moreItempage/modal.js";
+import { useDispatch, useSelector } from "react-redux";
 
 const Artist = () => {
+  const dispath = useDispatch();
+
   const data = [
     {
       image: lucky,
@@ -64,9 +69,18 @@ const Artist = () => {
       like: 7,
     },
   ];
+  const Modal = useSelector((state) => state.deal.modal);
 
+  const handleModal = () => {
+    dispath(modalstate());
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <ProfileBox>
+      {Modal ? <DealModal data={data}></DealModal> : null}
       <article className="artpf">
         <Link to={"/artist"}>
           <img src={UserProfile} alt="UserImg" />
@@ -77,7 +91,14 @@ const Artist = () => {
         <nav className="tagbutton">
           <button>팔로우</button>
           <button>거래내역</button>
-          <button>의뢰하기</button>
+          <button
+            className="modalbutton"
+            onClick={() => {
+              handleModal();
+            }}
+          >
+            의뢰하기
+          </button>
           <button>· · ·</button>
         </nav>
       </article>
