@@ -65,6 +65,7 @@ const ProfileBox = styled.main`
           margin: 16px 0px 10px 11px;
           font-size: var(--font14);
           text-decoration: none;
+          color: var(--HeaFoo);
         }
         .content {
           font-size: var(--font14);
@@ -73,6 +74,7 @@ const ProfileBox = styled.main`
           text-decoration: none;
         }
         .price {
+          color: var(--HeaFoo);
           font-size: var(--font20);
           margin: 0px 0px 14px 11px;
         }

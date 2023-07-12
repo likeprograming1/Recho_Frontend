@@ -4,6 +4,7 @@ const Modal = styled.section`
   width: 100%;
   height: 100%;
   top: 0px;
+  z-index: 1;
   position: absolute;
   display: flex;
   justify-content: center;

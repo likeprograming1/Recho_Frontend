@@ -2,24 +2,38 @@ import styled from "styled-components";
 
 const More = styled.main`
   margin: 0 auto;
-  padding-top: 83px;
+  padding: 83px 0px;
   position: relative;
   .tagsName{
     max-width : 1403px;
     margin: 0 auto;
     display: flex;
     padding-bottom: 11px;
+    .tag,
+    .lasttag{
+      border: none;
+      background: none;
+      font-size: 24px;
+      font-weight: 600;
+      margin-right: 10px;
+    }
     .tag{
       color: var(--HeaFont);
-      margin-right: 60px;
     }
-  }
+    .lasttag{
+
+    }
+  } 
   .ordermade{
     max-width: 1403px;
     margin: 0 auto;
     .Imgbox{
       display: flex;
       justify-content: space-between;
+      .white{
+        width: 700px;
+        height: 695px;
+      }
       .MainImg{
         width: 700px;
         height: 695px;
