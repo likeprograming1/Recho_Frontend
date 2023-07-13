@@ -33,6 +33,10 @@ export const NftBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  button {
+    border: none;
+    background: none;
+  }
   img{
     width: 200px;
     height: 200px;

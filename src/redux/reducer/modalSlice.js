@@ -5,6 +5,7 @@ const modalSlice = createSlice({
   initialState : {
     modal : false,
     back: false,
+    cate : false,
   },
   reducers : {
     modalstate : (state) => {
@@ -16,8 +17,11 @@ const modalSlice = createSlice({
     closestate : (state) => {
       state.modal = false;
       state.back = false;
+    },
+    catestate : (state) => {
+      state.cate = !state.cate;
     }
   }
 });
-export const {modalstate, backstate, closestate} = modalSlice.actions;
+export const {modalstate, backstate, closestate, catestate} = modalSlice.actions;
 export default modalSlice.reducer;
