@@ -21,6 +21,7 @@ import good from "../../Image/etc/good.svg";
 import { modalstate } from "../../redux/reducer/modalSlice";
 import DealModal from "../moreItempage/modal.js";
 import { useDispatch, useSelector } from "react-redux";
+import ArtistModal from "./modal";
 
 const Artist = () => {
   const user = useParams().id;
@@ -446,7 +447,7 @@ const Artist = () => {
   }, []);
   return (
     <ProfileBox>
-      {Modal ? <DealModal data={tagImage[user].data}></DealModal> : null}
+      {Modal ? <ArtistModal></ArtistModal> : null}
       <article className="artpf">
         <Link to={`/artist/${user}`}>
           <img src={UserProfile} alt="UserImg" />

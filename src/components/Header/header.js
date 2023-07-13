@@ -1,21 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import HeaderBox from "./style";
 import RECHO from "../../Image/Header/RECHO.svg";
 import search from "../../Image/Header/search.svg";
 import sidebar from "../../Image/Header/sidebar.svg";
 import { Cookies } from "react-cookie";
+import { useDispatch, useSelector } from "react-redux";
+import { loginState, logoutState } from "../../redux/reducer/loginSlice";
 
 const Header = () => {
   const [Search, setSearch] = useState(true);
   const cookie = new Cookies();
-
   const token = cookie.get("Authorization");
-  console.log(token);
+  const dispatch = useDispatch();
+  const LoginState = useSelector((state)=> state.login.isLogin);
+  console.log(LoginState);
   const KakaoLogin = () => {
     window.location.assign("http://localhost:3000/auth/kakao");
   };
-
+  const handleLogOut = () => {
+    dispatch(logoutState());
+    cookie.remove("Authorization");
+  }
+  useEffect(()=>{
+    if(token){
+      dispatch(loginState());
+    }
+  },[])
   return (
     <HeaderBox>
       <div className="box">
@@ -61,12 +72,21 @@ const Header = () => {
             <Link to="#" className="navBtn">
               고객센터
             </Link>
-            <Link to="#" className="navBtn">
-              관심상품
-            </Link>
-            <Link onClick={KakaoLogin} className="sign-navBtn">
-              로그인
-            </Link>
+            {LoginState ? (
+              <>
+                <Link to="/mypage" className="navBtn">
+                  마이페이지
+                </Link>
+                <Link onClick={handleLogOut} className="sign-navBtn">
+                  로그아웃
+                </Link>
+              </>
+            ) : (
+              <Link onClick={KakaoLogin} className="sign-navBtn">
+                로그인
+              </Link>
+            )}
+
             <img src={sidebar} alt="search-butoon" className="navSidebar"></img>
           </div>
         </nav>
